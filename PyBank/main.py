@@ -46,10 +46,18 @@ print("Total months:", cmonths)
 print("Total:", "${:,.2f}".format(nettotal))
 print("Average change:", "${:,.2f}".format(round(change_total / (cmonths-1), 2)))
 print("Greatest Increase in Profits:", max_inc_month, "${:,.2f}".format(max_inc_value))
-print("Greatest Decrease in Profits:", min_inc_month, "${:,.2f}".format(min_inc_value))
+print("Greatest Decrease in Profits:", min_inc_month, "|", "${:,.2f}".format(min_inc_value))
 
 
-
+output_path = os.path.join("Analysis", "PyBank")
+with open(output_path, "w") as txtfile:
+    txtfile.write("Financial Analysis\n")
+    txtfile.write("\n")
+    txtfile.write(f"Total months: {cmonths}\n")
+    txtfile.write(f"Total: {nettotal}\n")
+    txtfile.write(f"Average Change in PL: ${change_total / (cmonths-1)}\n")
+    txtfile.write(f"Greatest Increase in Profits: {max_inc_month} ( ${max_inc_value})\n")
+    txtfile.write(f"Greatest Decrease in Profits: {min_inc_month} (${min_inc_value})\n")
 
 
 '''

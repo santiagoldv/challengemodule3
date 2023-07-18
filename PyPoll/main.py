@@ -13,10 +13,14 @@ with open(electiondata_csv) as election_file:
     next(csv_reader, None)
 
 
-    for each_line in csv_reader:
-        
+    #for each_line in csv_reader:
 
-""" for each_line in csv_reader:
+
+
+
+
+"""
+    for each_line in csv_reader:
         cmonths += 1
         current_month = each_line[0]
         current_profit = int(each_line[1])
@@ -29,4 +33,5 @@ with open(electiondata_csv) as election_file:
           
             if current_change > max_inc_value:
                 max_inc_month = current_month               
-                max_inc_value = current_change """
+                max_inc_value = current_change 
+"""

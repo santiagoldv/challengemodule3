@@ -58,23 +58,3 @@ with open(output_path, "w") as txtfile:
     txtfile.write(f"Average Change in PL: ${change_total / (cmonths-1)}\n")
     txtfile.write(f"Greatest Increase in Profits: {max_inc_month} ( ${max_inc_value})\n")
     txtfile.write(f"Greatest Decrease in Profits: {min_inc_month} (${min_inc_value})\n")
-
-
-'''
-output = (         
-    "Financial Analysis\n"
-    "\n"       
-    f"Total months: {cmonths}\n"
-    f"Total: {nettotal}\n"
-    #f"Average change: {}\n"
-    #f"Greatest Increase in Profits: {current_month} {current_change}\n"
-    )
-'''
-#("Average change: ", "${:,.2f}".format(round(change_total / (cmonths-1), 2)))
-#p(f"Greatest Increase in Profits: {max_inc_month} {max_inc_value}")
-#print("Greatest Decrease in Profits:") """
-
-#print(output)
-
-#with open(OUTPUT_PATH, "w") as outfile:
-    #   outfile.write(output) """

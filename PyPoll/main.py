@@ -39,8 +39,25 @@ with open(electiondata_csv) as election_file:
         if votes > vote_count:
             vote_count = votes
             winner = candidate
-
-        print(candidate, "{:,.2f}".format(percentaje), "%", "{:,.0f}".format(votes))
+            
+        print(candidate, "|", "{:,.2%}".format(percentaje/100),"|", "{:,.0f}".format(votes))
 print("")
 print("Winner:", winner)
 
+output_path = os.path.join("Analysis", "PyPoll")
+with open(output_path, "w") as txtfile:
+    txtfile.write("Election Results\n")
+    txtfile.write("\n")
+    txtfile.write(f"Total votes: {totalvotes}\n")
+    txtfile.write("\n")
+    for candidate in candidate_votes:
+            votes = candidate_votes.get(candidate)
+            percentaje = float(votes)/float(totalvotes)*100
+            if votes > vote_count:
+                vote_count = votes
+                winner = candidate                               
+            votes = ("{:,.0f}".format(votes))
+            percentaje = ("{:,.2%}".format(percentaje/100))
+            txtfile.write(f"{candidate, percentaje, votes}\n")
+    txtfile.write("\n")
+    txtfile.write(f"Winner: {winner}\n")
